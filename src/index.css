@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(241, 234, 239);
+}
+
+.bg-radial {
+	background: radial-gradient(
+		circle,
+		rgba(239, 231, 225, 1) 0%,
+		rgba(255, 255, 255, 1) 100%
+	);
+}
