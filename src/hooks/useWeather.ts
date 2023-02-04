@@ -9,7 +9,9 @@ const useWeather = () => {
 
 	const getOptions = async (value: string) => {
 		const response = await fetch(
-			`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=da751d3334248e33ff5d943e5fddd914`
+			`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${
+				import.meta.env.VITE_APP_API_KEY
+			}`
 		)
 		const data = await response.json()
 		setOptions(data)
@@ -32,7 +34,9 @@ const useWeather = () => {
 		setCity(option.name)
 
 		const response = await fetch(
-			`https://api.openweathermap.org/data/2.5/forecast?lat=${option.lat}&lon=${option.lon}&appid=da751d3334248e33ff5d943e5fddd914`
+			`https://api.openweathermap.org/data/2.5/forecast?lat=${option.lat}&lon=${
+				option.lon
+			}&appid=${import.meta.env.VITE_APP_API_KEY}`
 		)
 		const data = await response.json()
 
